@@ -1,0 +1,13 @@
+version: v2.0
+ 
+name: issue测试
+on:
+  issue:
+    action:
+      - open
+      - reopen
+      - update
+steps:
+- checkout: self
+- run: |
+    echo "hello"

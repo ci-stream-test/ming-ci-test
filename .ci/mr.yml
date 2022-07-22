@@ -1,0 +1,15 @@
+version: v2.0
+ 
+name: mr测试
+on:
+  mr:
+    target-branches:
+      - master
+    paths:
+      - src/main/java/*
+    users:
+      - mingshewhe
+steps:
+- checkout: self
+- run: |
+    echo "hello"

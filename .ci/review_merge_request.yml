@@ -1,0 +1,35 @@
+version: v2.0
+ 
+name: review测试
+on:
+  review:
+    types:
+      - merge_request
+    states:
+      - approved
+      - approving
+      - change_denied
+      - change_required
+steps:
+- checkout: self
+- run: |
+    echo "hello"
+    echo "${ci.event}"
+    echo "${ci.ref}"
+    echo "${ci.branch}"
+    echo "${ci.sha}"
+    echo "${ci.sha_short}"
+    echo "ci.head_ref:${ci.head_ref}"
+    echo "ci.base_ref:${ci.base_ref}"
+    echo "ci.mr_id:${ci.mr_id}"
+    echo "ci.mr_iid:${ci.mr_iid}"
+    echo "ci.repo_url:${ci.repo_url}"
+    echo "ci.mr_title:${ci.mr_title}"
+    echo "ci.mr_proposer:${ci.mr_proposer}"
+    echo "ci.review_id:${ci.review_id}"
+    echo "ci.review_iid:${ci.review_iid}"
+    echo "ci.build_url:${ci.build_url}"
+    echo "ci.event_url:${ci.event_url}"
+    echo "ci.review_owner:${ci.review_owner}"
+    echo "ci.review_state:${ci.review_state}"
+    echo "ci.review_reviewers:${ci.review_reviewers}" 

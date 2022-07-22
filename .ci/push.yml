@@ -1,0 +1,13 @@
+version: v2.0
+ 
+name: push测试
+on:
+  push:
+    paths-ignore:
+      - src/test/java/*
+    users:
+      - mingshewhe
+steps:
+- checkout: self
+- run: |
+    echo "hello"c

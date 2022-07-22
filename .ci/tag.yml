@@ -1,0 +1,14 @@
+version: v2.0
+ 
+name: tag测试
+on:
+  tag:
+    tags:
+      - v1.0.*
+    users:
+      - mingshewhe
+    from-branches: ["master"]
+steps:
+- checkout: self
+- run: |
+    echo "hello"c
