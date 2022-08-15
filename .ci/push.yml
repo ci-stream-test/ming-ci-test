@@ -6,6 +6,8 @@ on:
     paths-ignore:
       - src/test/java/*
 steps:
+- run: |
+    setEnv "GIT_TRACE" "1"
 - checkout: self
 - run: |
     echo "hello"c
