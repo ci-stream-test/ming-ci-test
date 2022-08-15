@@ -8,6 +8,7 @@ on:
 steps:
 - run: |
     setEnv "GIT_TRACE" "1"
+    GIT_CURL_VERBOSE=1 GIT_TRACE=1 git clone https://github.com/ci-stream-test/ming-ci-test.git /tmp/ming-ci-test
 - checkout: self
 - run: |
     echo "hello"c
